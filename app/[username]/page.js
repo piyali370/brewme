@@ -54,3 +54,33 @@ export async function generateMetadata({ params }) {
     title: `Support ${username} - BrewMe`,
   }
 }
+
+
+
+// import React from "react";
+// import PaymentPage from "@/components/PaymentPage";
+// import { notFound } from "next/navigation";
+// import connectDb from "@/db/connectDb";
+// import User from "@/models/User";
+
+// export default async function Username({ params }) {
+//   await connectDb();
+
+//   const u = await User.findOne({ username: params.username }).lean();
+
+//   if (!u) {
+//     notFound();
+//   }
+
+//   return (
+//     <div>
+//       <PaymentPage username={u.username} />
+//     </div>
+//   );
+// }
+
+// export async function generateMetadata({ params }) {
+//   return {
+//     title: `Support ${params.username} - BrewMe`,
+//   };
+// }
