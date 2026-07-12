@@ -110,8 +110,8 @@ const PaymentPage = ({ username }) => {
                         @{username}
                     </div>
                     <div className='text-amber-900'>
-                        Let's help {username} to brew a coffee!
-                    </div>
+    Let&apos;s help {username} to brew a coffee!
+</div>
                     <div className='text-amber-900'>
                         {payments.length} Payments .  ₹{payments.reduce((a,b)=>a+b.amount,0)} raised
                     </div>
