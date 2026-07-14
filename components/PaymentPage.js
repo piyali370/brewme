@@ -116,7 +116,8 @@ useEffect(() => {
 
                 <div className='cover w-full bg-red-50 relative'>
                     <img className='object-cover w-full h-48 md:h-[350]' src={currentUser.coverpic} alt="" />
-                    <div className='absolute -bottom-20 right-[38%] md:right-[46%] border-amber-950 overflow-hidden border-2 rounded-full size-36'>
+                    {/* <div className='absolute -bottom-20 right-[38%] md:right-[46%] border-amber-950 overflow-hidden border-2 rounded-full size-36'> */}
+                    <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 border-amber-950 overflow-hidden border-2 rounded-full size-36">
                         <img className='rounded-full object-cover size-36' width={130} height={130} src={currentUser.profilepic} alt="" />
                     </div>
                 </div>
