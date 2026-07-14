@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   const { data: session } = useSession()
+  const [showSearch, setShowSearch] = useState(false)
   const [showdropdown, setshowdropdown] = useState(false)
 
   const router = useRouter();
@@ -32,13 +33,15 @@ const Navbar = () => {
       <div className="flex items-center gap-3 ml-auto">
 
         <form onSubmit={handleSearch} className="hidden md:flex">
+        {/* <form onSubmit={handleSearch} className="flex w-full md:w-auto items-center"> */}
           <div className="flex">
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search creator..."
-              className=" me-2 mb-2 px-5 py-2 text-sm text-center font-stretch-50% border border-pink-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+              // className=" me-2 mb-2 px-5 py-2 text-sm text-center font-stretch-50% border border-pink-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+              className="w-32 md:w-64 me-2 mb-2 px-3 py-2 text-sm border border-pink-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
             />
 
             <button
@@ -49,6 +52,35 @@ const Navbar = () => {
             </button>
           </div>
         </form>
+
+        {/* Mobile */}
+<div className="md:hidden">
+    {showSearch ? (
+        <form onSubmit={handleSearch} className="flex">
+            <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search..."
+                className="w-32 px-2 py-2 rounded-l-lg border border-pink-300"
+            />
+
+            <button
+                type="submit"
+                className="px-3 bg-gradient-to-br from-pink-500 to-orange-400 text-white rounded-r-lg"
+            >
+                🔍
+            </button>
+        </form>
+    ) : (
+        <button
+            onClick={() => setShowSearch(true)}
+            className="p-2 rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 text-white"
+        >
+            🔍
+        </button>
+    )}
+    </div>
 
         {session && <>
         <div className="relative">
